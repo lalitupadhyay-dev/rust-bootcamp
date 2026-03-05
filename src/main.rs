@@ -27,4 +27,14 @@ fn main() {
         None => println!("No character is found!"),
     }
 
+    // Conditionals ------------------------------------------------------------
+
+    let age: i8 = 19;
+
+    if age > 18 {
+        println!("You are eligible!")
+    } else {
+        println!("You are not eligible!")
+    }
+
 }
