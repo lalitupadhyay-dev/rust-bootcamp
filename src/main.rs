@@ -99,6 +99,19 @@ fn main() {
 
     let res: String = find_first_word(&itr_str);
     println!("{}", res);
+
+    // Understanding Ownership -----------------------------------------------------------
+
+
+    let str: String = String::from("I am Lalit");
+    println!("{}", str);
+
+
+    let newStr: String = str;
+    println!("{}", newStr);
+
+    // println!("{}", str); // This line will throw error
+
 }
 
 fn find_first_word(sentence: &str) -> String {
