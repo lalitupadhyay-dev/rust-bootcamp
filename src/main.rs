@@ -107,8 +107,8 @@ fn main() {
     println!("{}", str);
 
 
-    let newStr: String = str;
-    println!("{}", newStr);
+    let new_str: String = str;
+    println!("{}", new_str);
 
     // println!("{}", str); // This line will throw error
 
