@@ -112,6 +112,24 @@ fn main() {
 
     // println!("{}", str); // This line will throw error
 
+
+    // Borrowing & Referencing ----------------------------------------------------------------
+
+    let s1: String = String::from("Hi there!");
+    let s2: &str = &s1;
+
+    println!("{}", s1);
+    println!("{}", s2);
+
+    let mut s3: String = String::from("Hello ");
+    borrow_1(&mut s3);
+    
+
+}
+
+fn borrow_1 (str: &mut String) {
+    str.push_str("World");
+    println!("{}", str);
 }
 
 fn find_first_word(sentence: &str) -> String {
