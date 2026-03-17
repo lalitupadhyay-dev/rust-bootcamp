@@ -115,6 +115,7 @@ fn main() {
 
     // Borrowing & Referencing ----------------------------------------------------------------
 
+    // Only for reading
     let s1: String = String::from("Hi there!");
     let s2: &str = &s1;
 
@@ -123,7 +124,27 @@ fn main() {
 
     let mut s3: String = String::from("Hello ");
     borrow_1(&mut s3);
+
+
+    // For writing
+
+    let mut s5: String = String::from("I am learning Rust.");
+
+    println!("{s5}");
+
+    let s6: &mut String = &mut s5;
+
+    s6.push_str(" From Harkirat");
+
+    println!("{s6}");
+
+    let s7: &String = &s5;
+
+    println!("{s7}");
+
+    // Structs ---------------------------------------------------------------
     
+        
 
 }
 
