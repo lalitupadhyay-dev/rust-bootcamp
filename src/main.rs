@@ -1,3 +1,16 @@
+enum Direction {
+    North,
+    South, 
+    East, 
+    West
+}
+
+enum Shape {
+    Circle(f32),
+    Rectangle(f32, f32),
+    Square(f32),
+}
+
 fn main() {
     // Integer
     let x: i32 = 5;
@@ -144,7 +157,56 @@ fn main() {
 
     // Structs ---------------------------------------------------------------
     
-        
+    // Tuple struct
+    struct User {
+        name: String,
+        age: i8,
+        active: bool,
+    }
+
+    let name: String = String::from("Lalit Upadhyay");
+    let age: i8 = 25;
+    let active: bool = true;
+
+    let user = User {
+        name: name,
+        age: age,
+        active: active
+    };
+
+    println!("{}, {}, {}", user.name, user.age, user.active);
+
+    // ENUMs----------------------------------------------------------------------------------------------------------------
+    // this is used to restrict the values
+
+    // make_a_move(Direction::West);
+
+
+    // Pattern matching on ENUMS--------------------------------------------------------------------------------------------
+
+    let area: f32 = calculate_shape_area(Shape::Square(4.0));
+
+    println!("{}", area);
+
+    // Implementing struct---------------------------------------------------------------
+
+    struct Rect {
+        width: u32,
+        height: u32,
+    }
+
+    impl Rect {
+        fn calc_area(&self) -> u32 {
+            &self.width * &self.height
+        }
+    }
+
+    let r: Rect = Rect {
+        width: 30,
+        height: 40,
+    };
+
+    println!("{}", r.calc_area());
 
 }
 
@@ -164,4 +226,20 @@ fn find_first_word(sentence: &str) -> String {
         }
     }
     return ans;
+}
+
+// fn make_a_move (dr: Direction) {
+//     println!("Character moved to -> {:?}", dr);
+// }
+
+fn calculate_shape_area (shape: Shape) -> f32 {
+
+    let ans: f32 = match shape {
+        Shape::Circle(r) => 3.14 * r * r,
+        Shape::Rectangle(l, b) => l * b,
+        Shape::Square(s) => s * s,
+    };
+
+    return ans;
+
 }
